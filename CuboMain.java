@@ -20,6 +20,8 @@ public class CuboMain {
      * @param args argumentos de la línea de comandos (no utilizados en este programa).
      */
     public static void main(String[] args) {
+        GestorCubos gestorCubos = new GestorCubos();
+
         ArrayList<Cubo> cubos = new ArrayList<>();
         Cubo cubo1 = new Cubo(pedirLado());
         Cubo cubo2 = new Cubo(pedirLado());
@@ -28,6 +30,14 @@ public class CuboMain {
         cubos.add(cubo1);
         cubos.add(cubo2);
         cubos.add(cubo3);
+
+        gestorCubos.ordenarCubos(cubos);
+        for (Cubo cubo : cubos) {
+            JOptionPane.showMessageDialog(null,cubo.toString());
+        }
+
+        JOptionPane.showMessageDialog(null, "¿El cubo 1 entra en el cubo 2?"
+                + gestorCubos.cuboEntraCubo(cubo1, cubo2));
 
         imprimirAreaBase(cubo1);
         imprimirVolumenCubo(cubo1);

@@ -10,6 +10,8 @@ public class Cubo implements Comparable<Cubo> {
     /** Longitud del lado del cubo. */
     private int lado;
 
+    public Cubo() {}
+
     /**
      * Crea un cubo indicando su lado
      * @param lado longitud del cubo
@@ -65,4 +67,11 @@ public class Cubo implements Comparable<Cubo> {
         return Float.compare(otro.calcularVolumen(), this.calcularVolumen());
     }
 
+    @Override
+    public String toString() {
+        return "Cubo{" +
+                "lado=" + lado +
+                "Volumen=" + calcularVolumen() +
+                '}';
+    }
 }
